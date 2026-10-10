@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#80613b">
+<title>Teresa Ávalos | 107 años</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px 0 30px;
+    min-height: 100vh;
+    color: #493326;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #a88a68;
+    background-image:
+        repeating-linear-gradient(0deg, #876849 0 2px, transparent 2px 5px),
+        repeating-linear-gradient(90deg, #c5a782 0 1px, #a88a68 1px 4px);
+    overflow-x: hidden;
+}
+
+/* Marco de madera */
+.frame {
+    width: 94%;
+    max-width: 570px;
+    margin: auto;
+    padding: 12px;
+    background: repeating-linear-gradient(
+        8deg, #54371f 0 4px, #876344 4px 9px,
+        #69472b 9px 12px, #a27d56 12px 15px
+    );
+    border: 3px solid #4b311f;
+    box-shadow: inset 0 0 0 3px #b38a60,
+                0 8px 24px #29190f80;
+}
+
+.paper {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 18px 24px;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center,
+        #fffdf6 0%, #f7f0e1 68%, #e9d9bc 100%);
+    box-shadow: inset 0 0 22px #b9a17a55;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.botanical {
+    color: #65745b;
+    font-size: clamp(22px, 5vw, 30px);
+    line-height: 1.6;
+    letter-spacing: 2px;
+}
+
+.name {
+    color: #b38a43;
+    font-size: clamp(38px, 9vw, 57px);
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.15;
+    margin: 15px 0;
+    text-shadow: 1px 1px #e8d2a4;
+}
+
+.age {
+    margin: 0;
+    color: #a87c36;
+    font-size: clamp(78px, 19vw, 110px);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.years {
+    color: #a87c36;
+    font-size: clamp(35px, 9vw, 48px);
+    margin: 5px 0 22px;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    margin: 0 auto;
+    max-width: 370px;
+    font-size: clamp(16px, 4vw, 21px);
+    line-height: 1.5;
+}
+
+.flourish {
+    color: #758269;
+    margin: 24px auto;
+    font-size: 22px;
+}
+
+.invite-text {
+    font-size: clamp(15px, 3.8vw, 19px);
+    line-height: 1.6;
+    max-width: 340px;
+    margin: auto;
+}
+
+.details {
+    margin: 23px auto 0;
+    color: #79572f;
+    font-size: clamp(15px, 3.8vw, 19px);
+    line-height: 2;
+}
+
+.florals {
+    margin-top: 18px;
+    font-size: clamp(22px, 5vw, 30px);
+    line-height: 1.6;
+}
+
+/* Confirmación de presencia */
+.rsvp {
+    margin: 22px auto 0;
+    max-width: 390px;
+    padding: 20px 15px;
+    background: #f0e4cd;
+    border: 1px solid #c8ab76;
+}
+
+.rsvp h2 {
+    margin: 0 0 9px;
+    color: #986d30;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.rsvp p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    margin: 9px 0;
+    padding: 13px;
+    border: 1px solid #c5a777;
+    border-radius: 3px;
+    color: #493326;
+    background: #fffdf8;
+    font: 15px Georgia, serif;
+}
+
+button {
+    width: 100%;
+    padding: 15px 8px;
+    margin-top: 8px;
+    border: 0;
+    border-radius: 3px;
+    background: #80613b;
+    color: white;
+    font: bold 14px Georgia, serif;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(.98);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 13px;
+    font-style: italic;
+    color: #7a6346;
+}
+
+/* Rosas y sombreros cayendo */
+.falling {
+    position: fixed;
+    top: -60px;
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-8vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(22px, 50vh) rotate(220deg);
+    }
+    100% {
+        transform: translate(-18px, 112vh) rotate(500deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .frame {
+        width: 96%;
+        padding: 8px;
+    }
+
+    .paper {
+        padding: 26px 12px 20px;
+    }
+
+    .rsvp {
+        padding: 16px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .falling {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="frame">
+<section class="paper">
+<div class="content">
+
+    <div class="botanical">🌾 🌿 🌹 🌿 🌾</div>
+
+    <h1 class="name">Teresa Ávalos</h1>
+
+    <div class="age">107</div>
+    <div class="years">AÑOS</div>
+
+    <p class="subtitle">
+        Celebrando la vida, el amor y el legado
+    </p>
+
+    <div class="flourish">──── ❧ 🌿 ❧ ────</div>
+
+    <p class="invite-text">
+        Con amor te invitamos a honrar sus<br>
+        <strong>107 años de historia</strong>
+    </p>
+
+    <div class="details">
+        17-10-26 &nbsp; • &nbsp; 20 HS &nbsp; • &nbsp; Plácido
+    </div>
+
+    <div class="florals">🌾 🌹 💐 🌿 🌹 🌾</div>
+
+    <section class="rsvp">
+        <h2>Confirmá tu presencia</h2>
+
+        <p>
+            Nos encantaría compartir este momento
+            tan especial con vos.
+        </p>
+
+        <form id="confirmForm">
+
+            <input
+                id="guestName"
+                type="text"
+                placeholder="Tu nombre y apellido"
+                autocomplete="name"
+                required
+            >
+
+            <select id="guestCount" required>
+                <option value="1">Asistiré 1 persona</option>
+                <option value="2">Asistiremos 2 personas</option>
+                <option value="3">Asistiremos 3 personas</option>
+                <option value="4">Asistiremos 4 personas</option>
+                <option value="5">Asistiremos 5 personas</option>
+                <option value="6">Asistiremos 6 personas</option>
+                <option value="7">Asistiremos 7 personas</option>
+                <option value="8">Asistiremos 8 personas</option>
+                <option value="9">Asistiremos 9 personas</option>
+                <option value="10">Asistiremos 10 personas</option>
+                <option value="11">Asistiremos 11 personas</option>
+                <option value="12">Asistiremos 12 personas</option>
+                <option value="13">Asistiremos 13 personas</option>
+                <option value="14">Asistiremos 14 personas</option>
+                <option value="15">Asistiremos 15 personas</option>
+            </select>
+
+            <button type="submit">
+                🌹 CONFIRMAR POR WHATSAPP 🌹
+            </button>
+
+        </form>
+    </section>
+
+    <p class="footer">
+        Con cariño, esperamos compartir este día con vos.
+    </p>
+
+</div>
+</section>
+</main>
+
+<script>
+/* Número de WhatsApp que recibirá las confirmaciones */
+const numeroWhatsApp = "595971736867";
+
+/* Formulario de confirmación */
+document.getElementById("confirmForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nombre = document.getElementById("guestName")
+        .value.trim();
+
+    const cantidad = document.getElementById("guestCount")
+        .value;
+
+    if (!nombre) {
+        alert("Por favor, escribí tu nombre.");
+        return;
+    }
+
+    const mensaje =
+        "¡Hola! 🌹 Confirmo mi asistencia a la celebración " +
+        "de Teresa Ávalos por sus 107 años.\n\n" +
+        "Nombre: " + nombre + "\n" +
+        "Cantidad de personas: " + cantidad + "\n" +
+        "Fecha: 17/10/2026 a las 20:00 hs.";
+
+    const url = "https://wa.me/" + numeroWhatsApp +
+        "?text=" + encodeURIComponent(mensaje);
+
+    window.location.href = url;
+});
+
+/* Animación de rosas y sombreros */
+const adornos = ["🌹", "🌹", "🌸", "🤠", "👒"];
+
+function crearAdorno() {
+
+    const elemento = document.createElement("span");
+
+    elemento.className = "falling";
+
+    elemento.textContent =
+        adornos[Math.floor(Math.random() * adornos.length)];
+
+    elemento.style.left = Math.random() * 100 + "vw";
+
+    elemento.style.fontSize =
+        (20 + Math.random() * 17) + "px";
+
+    elemento.style.animationDuration =
+        (7 + Math.random() * 6) + "s";
+
+    document.body.appendChild(elemento);
+
+    setTimeout(function() {
+        elemento.remove();
+    }, 14000);
+}
+
+setInterval(crearAdorno, 500);
+</script>
+
+</body>
+</html>
